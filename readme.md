@@ -42,6 +42,19 @@ Example :
 flask user create-shift Friday, 9:00 17:00
 ```
 
+**print-shifts** 
+
+Displays a list of all shifts 
+
+**clear-roster** 
+
+Used for emptying schedule list
+
+**print-staff**
+
+Displays a list of all staff members
+
+
 
 
 # Configuration Management
