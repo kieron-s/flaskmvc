@@ -6,6 +6,12 @@ class User(db.Model):
     username =  db.Column(db.String(20), nullable=False, unique=True)
     password = db.Column(db.String(256), nullable=False)
     role = db.Column(db.String(20))
+    shifts = db.relationship('Shift', secondary='user_shift', backref='users')
+
+    user_shift = db.Table('user_shift',
+        db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+        db.Column('shift_id', db.Integer, db.ForeignKey('shift.id'))
+    )
 
     __mapper_args__ = {
         'polymorphic_identity': 'user',
@@ -33,3 +39,5 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.username} {self.role}>'
+    
+    

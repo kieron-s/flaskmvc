@@ -13,6 +13,30 @@ A template for flask applications structured in the Model View Controller patter
 $ pip install -r requirements.txt
 ```
 
+# Initialization
+The database will be intitalized with 5 users : 1 admin (ID 1), 4 staff (ID 2-5)
+4 shifts : Monday - Thursday (Shift IDs 1-4) 
+and 2 staff members scheduled to shifts : Staff ID 2 to Shift ID 1 , Staff ID 3 to Shift ID 2
+
+
+# Cli Commands 
+create : makes a new user (added role as an argument with default role=staff)
+create-shift : add a new shift to database
+eg. create-shift Monday 9:00 17:00 (takes a day , start time and end time) 
+print-shifts : displays a list of all shifts 
+print-staff : displays a list of all staff members
+clear-roster : resets shift database to empty # used only for testing
+schedule-staff : adds a staff to a shift using IDS
+eg. schedule-staff 1 2 2 (takes an admin ID, staff ID and shift ID)
+view-combined-schedule : displays all staff members and shifts assigned
+view-shift-report : displays reports for all staff members and days worked
+eg. view-shift-report 1 (takes an admin ID)
+staff-checkin : allows staff members to check into shift
+eg. staff-checkin 2 1 (takes staff ID and shift ID)
+staff-checkout: allows staff members to check out of shift
+eg. staff-checkout 2 1 (takes staff ID and shift ID)
+
+
 # Configuration Management
 
 

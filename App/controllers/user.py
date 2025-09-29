@@ -1,6 +1,7 @@
 from App.models import User
 from App.database import db
 
+
 def create_user(username, password, role):
     newuser = User(username=username, password=password, role=role)
     db.session.add(newuser)
@@ -32,3 +33,15 @@ def update_user(id, username):
         db.session.commit()
         return True
     return None
+
+def create_shift(day, start_time, end_time):
+    from App.models import Shift 
+    from datetime import datetime
+    if isinstance(start_time, str):
+        start_time = datetime.strptime(start_time, "%H:%M").time()
+    if isinstance(end_time, str):
+        end_time = datetime.strptime(end_time, "%H:%M").time()
+    newshift = Shift(day=day, start_time=start_time, end_time=end_time)
+    db.session.add(newshift)
+    db.session.commit()
+    return newshift
