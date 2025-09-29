@@ -5,10 +5,17 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username =  db.Column(db.String(20), nullable=False, unique=True)
     password = db.Column(db.String(256), nullable=False)
+    role = db.Column(db.String(20))
 
-    def __init__(self, username, password):
+    __mapper_args__ = {
+        'polymorphic_identity': 'user',
+        'polymorphic_on': 'role',
+    }
+
+    def __init__(self, username, password, role):
         self.username = username
         self.set_password(password)
+        self.role = role
 
     def get_json(self):
         return{
@@ -24,3 +31,5 @@ class User(db.Model):
         """Check hashed password."""
         return check_password_hash(self.password, password)
 
+    def __repr__(self):
+        return f'<User {self.username} {self.role}>'
