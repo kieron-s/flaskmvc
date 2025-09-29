@@ -20,15 +20,28 @@ and 2 staff members scheduled to shifts : Staff ID 2 to Shift ID 1 , Staff ID 3 
 
 
 # Cli Commands 
--**create**
-Creates a new user
-  - Arguments : username, password, role
-  - Default role is staff
+**create**
+
+Creates a new user.
+    - Arguments : `username`, `password`, `role`
+    - Default role is staff
 
 Example: 
 ```bash
 flask user create terry terrypass admin
 ```
+
+**create-shift**
+
+Adds a new shift to database.
+    - Arguments : `day`, `start_time`, `end_time`
+    - Time format : `HH:MM` (24 hour)
+
+Example : 
+```bash
+flask user create-shift Friday, 9:00 17:00
+```
+
 
 
 # Configuration Management
