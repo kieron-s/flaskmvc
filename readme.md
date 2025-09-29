@@ -20,10 +20,11 @@ and 2 staff members scheduled to shifts : Staff ID 2 to Shift ID 1 , Staff ID 3 
 
 
 # Cli Commands 
-create
+-**create**
 Creates a new user
-    Arguments : username, password, role
-    Default role is staff
+  - Arguments : username, password, role
+  - Default role is staff
+
 Example: 
 ```bash
 flask user create terry terrypass admin
