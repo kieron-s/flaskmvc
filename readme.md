@@ -44,18 +44,59 @@ flask user create-shift Friday, 9:00 17:00
 
 **print-shifts** 
 
-Displays a list of all shifts 
+Displays a list of all shifts.
 
 **clear-roster** 
 
-Used for emptying schedule list
+Used for emptying shift list.
 
 **print-staff**
 
-Displays a list of all staff members
+Displays a list of all staff members.
 
+**schedule-staff (admin ONLY)** 
 
+Assigns a staff member to a shift.
+    - Arguments : `admin_id`, `staff_id`, `shift_id`
 
+Example: 
+```bash
+flask user schedule-shift 1 2 2
+```
+
+**view-shift-report (admin ONLY)**
+
+Displays report of all staff members, including days worked and shift.
+    - Argument : ``admin_id``
+
+Example : 
+```bash
+flask user view-shift-report 1
+```
+
+**view-combined-schedule**
+
+Displays all shifts and staff members assigned to them.
+
+**staff-checkin**
+
+Allows a staff member to check into a shift.
+    - Arguments : ``staff_id``, ``shift_id`
+
+Example : 
+```bash
+flask user staff-checkin 2 1
+```
+
+**staff-checkout**
+
+Allows a staff member to check out of shift.
+    - Arguments : ``staff_id`, `shift_id`
+
+Example: 
+``` bash 
+flask user staff-checkout 2 1
+```
 
 # Configuration Management
 
