@@ -67,7 +67,7 @@ flask user schedule-shift 1 2 2
 **view-shift-report (admin ONLY)**
 
 Displays report of all staff members, including days worked and shift.
-    - Argument : ``admin_id``
+    - Argument : `admin_id`
 
 Example : 
 ```bash
@@ -81,7 +81,7 @@ Displays all shifts and staff members assigned to them.
 **staff-checkin**
 
 Allows a staff member to check into a shift.
-    - Arguments : ``staff_id``, ``shift_id`
+    - Arguments : `staff_id`, `shift_id`
 
 Example : 
 ```bash
@@ -91,7 +91,7 @@ flask user staff-checkin 2 1
 **staff-checkout**
 
 Allows a staff member to check out of shift.
-    - Arguments : ``staff_id`, `shift_id`
+    - Arguments : `staff_id`, `shift_id`
 
 Example: 
 ``` bash 
