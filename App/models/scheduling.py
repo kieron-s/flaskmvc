@@ -4,10 +4,10 @@ from .shift import Shift
 
 class Scheduling(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    staff_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # <-- Use 'user.id'
+    staff_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  
     shift_id = db.Column(db.Integer, db.ForeignKey('shift.id'), nullable=False)
 
-    staff = db.relationship('User', backref=db.backref('schedules', lazy=True))  # <-- Use 'User'
+    staff = db.relationship('User', backref=db.backref('schedules', lazy=True))  
     shift = db.relationship('Shift', backref=db.backref('schedules', lazy=True))
 
     def __init__(self, staff_id, shift_id):
